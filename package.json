@@ -1,0 +1,40 @@
+{
+  "name": "codecept-playwright-project-using-es6",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "pnpm exec codeceptjs run --grep @runAll",
+    "test:headless:tag": "HEADLESS=true pnpm exec codeceptjs run --grep",
+    "test:tag": "pnpm exec codeceptjs run --grep",
+    "test:staging:tag": "ENVIRONMENT=staging pnpm exec codeceptjs run --grep",
+    "test:prod:tag": "ENVIRONMENT=prod pnpm exec codeceptjs run --grep",
+    "lint": "eslint . && echo 'Please fix linting issues before pushing code if exists'",
+    "postinstall": "husky install",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --max-warnings=0",
+      "git add"
+    ]
+  },
+  "keywords": [],
+  "author": "Ilakkiya Ravikumar",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/register": "^7.24.6",
+    "@codeceptjs/allure-legacy": "^1.0.2",
+    "@eslint/js": "^9.9.1",
+    "@shelex/cypress-allure-plugin": "^2.40.2",
+    "allure-commandline": "^2.30.0",
+    "codeceptjs": "^3.6.5",
+    "eslint": "^9.9.1",
+    "globals": "^15.9.0",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.10",
+    "playwright": "^1.46.1"
+  }
+}
